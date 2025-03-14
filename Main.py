@@ -2,15 +2,23 @@
 import pygame as p
 
 
-
+_display = p.display
 class CPU():
+    window = None
+    Screen_width = 800
+    Screen_height = 500
     def __init__(self) -> None:
         pass
     def begin(self):
-        pass
+        p.display.init()
+        CPU.window = p.display.set_mode([CPU.Screen_width, CPU.Screen_height])
+        _display.set_caption('Tank Wars')
+        while True:
+            CPU.window.fill(p.Color(35, 0, 175))
+            _display.update()
     def end(self):
-        pass
-
+        print('Thank you for playing. You have unofficially died of getting hit by a bullet shot by the enemy during the fight.')
+        exit()
 
 class tank():
     def __init__(self) -> None:
@@ -61,3 +69,4 @@ class music():
         pass
     def play():
         pass
+CPU().begin()
