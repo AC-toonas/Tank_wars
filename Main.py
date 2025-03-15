@@ -10,10 +10,10 @@ class CPU():
     def __init__(self) -> None:
         pass
     def begin(self):
-        p.display.init()
+        _display.init()
         CPU.window = p.display.set_mode([CPU.Screen_width, CPU.Screen_height])
         _display.set_caption('Tank Wars')
-        while True:
+        while True: 
             CPU.window.fill(p.Color(35, 0, 175))
             _display.update()
     def end(self):
@@ -69,4 +69,5 @@ class music():
         pass
     def play():
         pass
-CPU().begin()
+c = CPU()
+c.begin()
