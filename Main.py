@@ -14,8 +14,26 @@ class CPU():
         CPU.window = p.display.set_mode([CPU.Screen_width, CPU.Screen_height])
         _display.set_caption('Tank Wars')
         while True: 
-            CPU.window.fill(p.Color(35, 0, 175))
+            CPU.window.fill(p.Color(150, 150, 255))
+            self.get_event()
             _display.update()
+
+    def get_event(self):
+        el = p.event.get()
+        for event in el:
+            if event.type == p.QUIT:
+                self.end()
+            if event.type == p.KEYDOWN:
+                if event.key == p.K_LEFT:
+                    pass
+                if event.key == p.K_RIGHT:
+                    pass
+                if event.key == p.K_UP:
+                    pass
+                if event.key == p.K_DOWN:
+                    pass
+                if event.key == p.K_SPACE:
+                    pass
     def end(self):
         print('Thank you for playing. You have unofficially died of getting hit by a bullet shot by the enemy during the fight.')
         exit()
