@@ -1,4 +1,3 @@
-#importantationatitationinitatimportatnte
 import pygame as p
 
 
@@ -16,6 +15,7 @@ class CPU():
         while True: 
             CPU.window.fill(p.Color(150, 150, 255))
             self.get_event()
+            CPU.window.blit(self.get_text('Remaining %d tanks'%5), (5, 5))
             _display.update()
 
     def get_event(self):
@@ -34,6 +34,13 @@ class CPU():
                     pass
                 if event.key == p.K_SPACE:
                     pass
+    def get_text(self, text):
+        p.font.init()
+        # fl = p.font.get_fonts()
+        # print('symbol' in fl)
+        f = p.font.SysFont('kaiti',18)
+        txtcanvs = f.render(text, True, p.Color(250, 250, 255))
+        return txtcanvs
     def end(self):
         print('Thank you for playing. You have unofficially died of getting hit by a bullet shot by the enemy during the fight.')
         exit()
